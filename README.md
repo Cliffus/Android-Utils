@@ -1,4 +1,4 @@
 Android-Utils
 =============
 
-A collection of some funky utils for Android
+A collection of some funky Android util classes
