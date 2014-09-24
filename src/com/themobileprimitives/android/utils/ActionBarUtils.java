@@ -27,11 +27,16 @@ public class ActionBarUtils
 		// get the ActionBar class
 		Class<?> actionBarClass = inActionBar.getClass();
 		
-		// if it is a Jelly Bean implementation (ActionBarImplJB), get the super class (ActionBarImplICS)
-		if ("android.support.v7.app.ActionBarImplJB".equals(actionBarClass.getName()))
-		{
-			actionBarClass = actionBarClass.getSuperclass();
-		}
+		// if it is a Jelly Bean implementation (ActionBarImplJBMR2), get the super super class (ActionBarImplICS)
+        	if ("android.support.v7.app.ActionBarImplJBMR2".equals(actionBarClass.getName()))
+        	{
+                	actionBarClass = actionBarClass.getSuperclass().getSuperclass();
+        	}
+        	// if it is a Jelly Bean implementation (ActionBarImplJB), get the super class (ActionBarImplICS)
+        	else if ("android.support.v7.app.ActionBarImplJB".equals(actionBarClass.getName()))
+        	{
+        	        actionBarClass = actionBarClass.getSuperclass();
+        	}
 		
 		try
 		{
